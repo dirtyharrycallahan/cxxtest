@@ -1,0 +1,12 @@
+name: Lint
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4 # Check out the repository code
+    - name: Run Black code formatter
+      uses: psf/black@stable # Use the official Black action
+      with:
+        options: "--check --diff" # Run Black in check and diff mode
